@@ -10,14 +10,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Денис
  */
 public class Queue {
     private LinkedList<Integer> list = new LinkedList<>();
     private int limit = 10;
+
     public synchronized void push(Integer val) {
-        while( list.size() >= limit ){
+        while (list.size() >= limit) {
             try {
                 wait();
             } catch (InterruptedException ex) {
@@ -26,11 +26,11 @@ public class Queue {
         }
         list.add(val);
         notify();
-        
+
     }
-    
-    public synchronized Integer pop(){
-        while( list.size() == 0 ){
+
+    public synchronized Integer pop() {
+        while (list.size() == 0) {
             try {
                 wait();
             } catch (InterruptedException ex) {
@@ -38,9 +38,9 @@ public class Queue {
             }
         }
         Integer temp = list.pop();
-                notify();
+        notify();
         return temp;
-        
+
     }
-    
+
 }

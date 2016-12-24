@@ -8,7 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author sds
  */
 public class CpuConsumer extends Thread {
@@ -17,22 +16,21 @@ public class CpuConsumer extends Thread {
     public CpuConsumer(Queue queue) {
         this.queue = queue;
     }
-    
-    public void run(){
-        while( ! isInterrupted()){
+
+    public void run() {
+        while (!isInterrupted()) {
             Product prod = queue.pull();
-            if( prod != null){
+            if (prod != null) {
                 try {
                     System.out.println("Task is performing");
                     Thread.sleep(prod.time);
-                    
                 } catch (InterruptedException ex) {
-                   return;
+                    return;
                 }
-            }else{
+            } else {
                 Thread.yield();
             }
         }
     }
-    
+
 }

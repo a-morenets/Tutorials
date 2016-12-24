@@ -12,15 +12,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author sds
  */
 public class Queue {
-    List<Product> items = new LinkedList<Product>();
+    List<Product> items = new LinkedList<>();
     public static int MAX_SIZE = 10;
     ReentrantLock lock = new ReentrantLock();
-    Condition     emptyCondition = lock.newCondition();
-    Condition     fullCondition = lock.newCondition();
+    Condition emptyCondition = lock.newCondition();
+    Condition fullCondition = lock.newCondition();
+
     public /*synchronized*/ void push(Product item) {
         lock.tryLock();
         lock.lock();
@@ -32,35 +32,34 @@ public class Queue {
                     Logger.getLogger(Queue.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+
             items.add(item);
             emptyCondition.signal();
         } finally {
             lock.unlock();
         }
     }
-    
-    public /*synchronized*/ Product pull(){
+
+    public /*synchronized*/ Product pull() {
         Product result = null;
         lock.lock();
-        try{
-        
-        if( items.isEmpty() ){
-            try {
+        try {
+            if (items.isEmpty()) {
+                try {
                 /*wait();*/
-                emptyCondition.await();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Queue.class.getName()).log(Level.SEVERE, null, ex);
-                return null;
+                    emptyCondition.await();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Queue.class.getName()).log(Level.SEVERE, null, ex);
+                    return null;
+                }
             }
-        }
-        
-        result =  items.isEmpty() ? null :items.remove(0);
-        fullCondition.signal();        
-        }finally{
+
+            result = items.isEmpty() ? null : items.remove(0);
+            fullCondition.signal();
+        } finally {
             lock.unlock();
         }
         return result;
-        
     }
-    
+
 }

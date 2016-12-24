@@ -8,7 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author sds
  */
 public class ProcessProducer extends Thread {
@@ -17,9 +16,10 @@ public class ProcessProducer extends Thread {
     public ProcessProducer(Queue queue) {
         this.queue = queue;
     }
-    public void run(){
-        while(!isInterrupted()){
-            queue.push( new Product(5) );
+
+    public void run() {
+        while (!isInterrupted()) {
+            queue.push(new Product(5));
             try {
                 Thread.sleep(20);
             } catch (InterruptedException ex) {

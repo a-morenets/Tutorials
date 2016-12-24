@@ -5,7 +5,6 @@
 package samples.threads.threadsample;
 
 /**
- *
  * @author sds
  */
 public class Atomicity extends Thread {
@@ -16,26 +15,26 @@ public class Atomicity extends Thread {
 
     public void run() {
         while (true) {
-           // Class clazz = Object.class;
-           // Object.class  = String.class;
-           // Condition cond = lock.newCondition();
+            // Class clazz = Object.class;
+            // Object.class  = String.class;
+            // Condition cond = lock.newCondition();
             //cond.
-          //  
-  //          lock.
+            //
+            //          lock.
            /* if(! lock.tryLock() ){
                 continue;
             }
             try {
-             */   
-                if (b = !b) {
+             */
+            if (b = !b) {
 //                    synchronized(lock){
-                    i--;
-  //                  }
-                } else {
-    //                synchronized(lock){
-                    i++;
-      //            }
-                }
+                i--;
+                //                  }
+            } else {
+                //                synchronized(lock){
+                i++;
+                //            }
+            }
             /*} finally {
                 lock.unlock();
             }*/
@@ -46,10 +45,9 @@ public class Atomicity extends Thread {
     public static void main(String[] args) throws InterruptedException {
         new Atomicity().start();
         new Atomicity().start();
-       // new Atomicity().start();
+        // new Atomicity().start();
 
-        while (true){
-         
+        while (true) {
             System.out.println(i);
             Thread.sleep(500);
         }

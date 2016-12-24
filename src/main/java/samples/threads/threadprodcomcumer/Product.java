@@ -5,7 +5,6 @@
 package samples.threads.threadprodcomcumer;
 
 /**
- *
  * @author sds
  */
 public class Product {
@@ -14,5 +13,5 @@ public class Product {
     public Product(int time) {
         this.time = time;
     }
-    
+
 }

@@ -10,26 +10,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Денис
  */
-public class Producer extends Thread{
+public class Producer extends Thread {
     Queue queue;
 
     public Producer(Queue queue) {
         this.queue = queue;
     }
-    
-    public void run(){
-        while(!interrupted()){
-            queue.push( new Random().nextInt());
+
+    public void run() {
+        while (!interrupted()) {
+            queue.push(new Random().nextInt());
             try {
                 sleep(10);
             } catch (InterruptedException ex) {
-                return ;
+                return;
             }
         }
     }
-    
-    
+
 }
