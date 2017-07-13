@@ -6,7 +6,6 @@
 package samples.threads.threadsample;
 
 /**
- *
  * @author KIRIL
  */
 public class CalculationThread implements Runnable {
@@ -56,7 +55,7 @@ public class CalculationThread implements Runnable {
 
     @Override
     public void run() {
-       // int summ = 0;
+        // int summ = 0;
 
         for (int i = start; i < end; i++) {
             result += array[i];

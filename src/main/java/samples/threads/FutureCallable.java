@@ -22,6 +22,7 @@ import java.util.function.Function;
  * @author Денис
  */
 public class FutureCallable {
+
     public static void main(String[] args) throws Exception {
         int nThreads = 10;
         Function<Runnable, Thread> prod = Thread::new;

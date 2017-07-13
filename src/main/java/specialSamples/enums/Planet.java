@@ -15,11 +15,15 @@ public enum Planet {
 
     private final double mass;   // в килограммах
     private final double radius; // в метрах
+
     Planet(double mass, double radius) {
         this.mass = mass;
         this.radius = radius;
+        System.out.println("Initializing element " + ordinal());
     }
+
     public double mass() { return mass; }
+
     public double radius() { return radius; }
 
     // гравитационная постоянная

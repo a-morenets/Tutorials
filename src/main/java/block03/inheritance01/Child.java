@@ -21,7 +21,7 @@ public class Child extends Parent {
 		new Child().print(); // prints 2 (because Child class does not have print() method)
 		System.out.println("-------------------------");
 
-		new Child().printChildX(); // prints 3 (because Child class does have printChildX() method)
+		new Child().printChildX(); // prints 3 (because Child class has printChildX() method)
 	}
 
 }

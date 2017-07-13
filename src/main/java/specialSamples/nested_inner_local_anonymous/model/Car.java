@@ -11,15 +11,15 @@ public class Car extends Vehicle {
     private Charger charger;
     private BodyType bodyType;
 
-    public enum  BodyType { SEDAN , UNIVERSAL
-
+    public enum  BodyType {
+    	SEDAN , UNIVERSAL
     }
 
     public enum FuelType{
         GASOLINE , DIESEL, LPG , ELECTRO
     }
 
-    public class Engine extends AbstractEngine{
+    public class Engine extends AbstractEngine {
         /**
          * in cc
          */
@@ -43,7 +43,7 @@ public class Car extends Vehicle {
         }
     }
 
-    public static class Charger extends AbstractCharger{
+    public static class Charger extends AbstractCharger {
         private String model;
         private int chargeCurrent;
         private Car thisCar;
@@ -86,7 +86,7 @@ public class Car extends Vehicle {
                 ", color='" + color + '\'' +
                 ", vin='" + vin + '\'' +
                 ", engine=" + engine +
-                ", charger=" + charger.model +
+                ", charger=" + charger +
                 ", bodyType=" + bodyType +
                 '}';
     }

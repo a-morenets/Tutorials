@@ -44,6 +44,8 @@ public class Lect02 {
 		 */
 		byte b = 50;
 //		b = b * 2;
+        // Но так можно:
+		b *= 2;
 
 		// type cast
 		int a = 2000;

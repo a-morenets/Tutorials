@@ -23,9 +23,9 @@ public class Consumer extends Thread {
     public void run() {
         while (!interrupted()) {
             Integer i = queue.pop();
-            System.out.println("value = " + i);
+            System.out.println("Consumed value: " + i);
             try {
-                sleep(8);
+                sleep(800);
             } catch (InterruptedException ex) {
                 return;
             }

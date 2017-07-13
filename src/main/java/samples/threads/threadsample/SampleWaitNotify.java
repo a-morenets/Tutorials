@@ -8,10 +8,9 @@ import java.util.Random;
 
 
 /**
- *
  * @author sds
  */
-class Saver{
+class Saver {
     private volatile int value;
     public volatile boolean firstDone;
 
@@ -22,85 +21,76 @@ class Saver{
     public void setValue(int value) {
         this.value = value;
     }
-    
+
 }
 
 class ThreadGenerator extends Thread {
-   Saver saver; 
-    
-    public ThreadGenerator(Saver saver){
+    Saver saver;
+
+    public ThreadGenerator(Saver saver) {
         this.saver = saver;
     }
-    
+
     @Override
-    public void run(){
+    public void run() {
         Random r = new Random();
-        while(!saver.firstDone){
-                Thread.yield();
-            }
-        synchronized(saver){
-        for( int i=0; i< 10; i++){
-            int side = r.nextInt(10);
-           
-                
-                System.out.println("Side = "+ side);
+
+        while (!saver.firstDone) {
+            Thread.yield();
+        }
+
+        synchronized (saver) {
+            for (int i = 0; i < 10; i++) {
+                int side = r.nextInt(10);
+
+                System.out.println("Side = " + side);
                 saver.setValue(side);
                 saver.notify();
 
                 try {
                     saver.wait();
                 } catch (InterruptedException ex) {
-                    return ;
+                    return;
                 }
             }
         }
     }
 }
 
-
-
-class ThreadCalculator extends Thread{
+class ThreadCalculator extends Thread {
     Saver saver;
 
     public ThreadCalculator(Saver saver) {
         this.saver = saver;
     }
-    
-    public void run(){//saver.firstDone=true;
-        
-        synchronized(saver){
-            saver.firstDone=true;
-            
-            for(int i=0; i<10;i++){
-            
-                
+
+    public void run() {//saver.firstDone=true;
+        synchronized (saver) {
+            saver.firstDone = true;
+
+            for (int i = 0; i < 10; i++) {
                 try {
-                    
                     saver.wait();
                 } catch (InterruptedException ex) {
-                    return ;
+                    return;
                 }
                 int side = saver.getValue();
-                System.out.println("Square = "+ side*side);
+                System.out.println("Square = " + side * side);
                 saver.notify();
             }
         }
-    
     }
-    
 }
 
-
 public class SampleWaitNotify {
-    public static void main(String args[]) throws InterruptedException{
-       // System.out.println("TAK");
+
+    public static void main(String args[]) throws InterruptedException {
+        // System.out.println("TAK");
         Saver s = new Saver();
         ThreadGenerator generator = new ThreadGenerator(s);
         ThreadCalculator calculator = new ThreadCalculator(s);
         calculator.start();
         generator.start();
-       
-        
     }
-    
+
 }

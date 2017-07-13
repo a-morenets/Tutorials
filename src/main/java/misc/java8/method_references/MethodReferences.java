@@ -10,18 +10,13 @@ import java.util.List;
  */
 public class MethodReferences {
 
-    @FunctionalInterface
-    interface Expression {
-        boolean isEqual(int n);
-    }
-
     /* This method can be used as method reference */
-    boolean isEven(int n) {
+    private boolean isEven(int n) {
         return n % 2 == 0;
     }
 
     /* This method can be used as method reference */
-    static boolean isPositive(int n) {
+    private static boolean isPositive(int n) {
         return n > 0;
     }
 
@@ -48,7 +43,7 @@ public class MethodReferences {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         // sum even numbers only
-        Expression func = n -> n % 2 == 0;
+        Expression func = n -> n % 2 == 0; // lambda expression
         System.out.println(sum(nums, func)); // 20
 
         // sum even numbers only
@@ -79,49 +74,4 @@ public class MethodReferences {
         names.forEach(System.out::println);
     }
 
-    @FunctionalInterface
-    interface UserBuilder0 {
-        User createUser(); // default constructor
-    }
-
-    @FunctionalInterface
-    interface UserBuilder1 {
-        User createUser(String name); // constructor with 1 parameter
-    }
-
-    @FunctionalInterface
-    interface UserBuilder2 {
-        User createUser(String name, int age); // constructor with 2 parameters
-    }
-
-    /**
-     * Inner class User
-     */
-    private static class User {
-        private String name;
-        private int age;
-
-        /* default constructor */
-        public User() {
-        }
-
-        /* constructor with 1 parameter */
-        public User(String name) {
-            this.name = name;
-        }
-
-        /* constructor with 2 parameters */
-        public User(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        @Override
-        public String toString() {
-            return "User{" +
-                    "name='" + name + '\'' +
-                    ", age=" + age +
-                    '}';
-        }
-    }
 }

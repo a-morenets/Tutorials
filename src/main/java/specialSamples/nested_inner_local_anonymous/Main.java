@@ -6,6 +6,7 @@ import specialSamples.nested_inner_local_anonymous.model.ElectroCar;
 public class Main {
 
     public static void main(String[] args) {
+
         // Charger is a static inner class
         Car.Charger charger = new Car.Charger("XXXCharger", 20, null);
 

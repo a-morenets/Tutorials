@@ -21,9 +21,11 @@ public class Producer extends Thread {
 
     public void run() {
         while (!interrupted()) {
-            queue.push(new Random().nextInt());
+            Integer i = new Random().nextInt();
+            queue.push(i);
+            System.out.println("Produced value: " + i);
             try {
-                sleep(10);
+                sleep(500);
             } catch (InterruptedException ex) {
                 return;
             }

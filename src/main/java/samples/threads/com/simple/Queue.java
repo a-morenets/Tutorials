@@ -26,7 +26,6 @@ public class Queue {
         }
         list.add(val);
         notify();
-
     }
 
     public synchronized Integer pop() {
@@ -40,7 +39,6 @@ public class Queue {
         Integer temp = list.pop();
         notify();
         return temp;
-
     }
 
 }

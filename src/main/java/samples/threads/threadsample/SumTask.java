@@ -42,11 +42,11 @@ public class SumTask {
     public static void main(String args[]) throws InterruptedException {
         int arr[] = new int[40_000_000];
         Arrays.fill(arr, 1);
-        int threadNumber = 16;
+        int threadNumber = 256;
         SumCalculator[] sc = new SumCalculator[threadNumber];
         for (int i = 0; i < threadNumber; i++) {
-            sc[i] = new SumCalculator(arr, arr.length * i / threadNumber,
-                    arr.length * (i + 1) / threadNumber);
+            sc[i] = new SumCalculator(arr, arr.length / threadNumber * i,
+                    arr.length / threadNumber * (i + 1));
             sc[i].start();
         }
         //sc1.start();
