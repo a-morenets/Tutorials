@@ -91,8 +91,8 @@ public class FunctionalInterfacesDemo {
 
         /* UnaryOperator<T> */
         // sqr operation
-        UnaryOperator<Float> sqr = x -> x * x;
-        System.out.println(unOperation(sqr, 3)); // 9.0
+        UnaryOperator<Float> sqrX = x -> x * x;
+        System.out.println(unOperation(sqrX, 3)); // 9.0
 
         /* Function<T, R> */
         // cast String -> Integer
@@ -102,7 +102,7 @@ public class FunctionalInterfacesDemo {
         /* Consumer<T> */
         // print sqr(x) from 0 to x inclusive
         Consumer<Integer> printSquares = x -> {
-            for (int i = 0; i <= x; i++) System.out.println(unOperation(sqr, i));
+            for (int i = 0; i <= x; i++) System.out.println(unOperation(sqrX, i));
         };
         doSmth(printSquares, 5); // squares from 0 to 5 inclusive
 

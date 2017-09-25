@@ -30,11 +30,11 @@ public class Base {
 		return y;
 	}
 	
-	// static init block
+	// init block
 	{
-		System.out.println("static block before: y = " + y);
+		System.out.println("init block before: y = " + y);
 		y = 10;
-		System.out.println("static block after: y = " + y);
+		System.out.println("init block after: y = " + y);
 	}
 	
 	public void setY(float y) {

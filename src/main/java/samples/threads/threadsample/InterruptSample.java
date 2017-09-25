@@ -5,13 +5,13 @@
 package samples.threads.threadsample;
 
 
-class InterruptedThread /*implements Runnable /**/ extends Thread {
+class InterruptedThread extends Thread {
+
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10050000; j++)
-//                if (Thread.interrupted()) { // interrupted();
-                    if (isInterrupted()) { // interrupted();
+                if (isInterrupted()) { // interrupted();
                     System.out.println("isInterrupted() == " + isInterrupted());
                     //resources must be closed
                     return;
@@ -26,13 +26,16 @@ class InterruptedThread /*implements Runnable /**/ extends Thread {
             }
         }
     }
+
 }
 
 public class InterruptSample {
+
     public static void main(String args[]) throws InterruptedException {
         InterruptedThread thread = new InterruptedThread();
         thread.start();
         Thread.sleep(200);
         thread.interrupt();
     }
+
 }

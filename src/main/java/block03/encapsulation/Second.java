@@ -1,16 +1,17 @@
-package block03.inheritance04;
+package block03.encapsulation;
 
 
 public class Second extends First {
-	int val = 2;
+	int publicValue = 2;
 	private int value = 2;
 
 	void addFive() {
+		System.out.println("addFive in Second");
 		value += 5;
-		System.out.println("second ");
 	}
 
 	public int GetValue() {
+		System.out.println("getValue in Second");
 		return value;
 	}
 

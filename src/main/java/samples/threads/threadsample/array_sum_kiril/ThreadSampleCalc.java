@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package samples.threads.threadsample;
+package samples.threads.threadsample.array_sum_kiril;
 
 import java.util.Arrays;
 
@@ -13,15 +13,15 @@ import java.util.Arrays;
  */
 public class ThreadSampleCalc {
 
-    private static final int[] array = new int[100500000];
-    private static final int cores = 11;
+    private static final int[] array = new int[123456789];
+    private static final int cores = 31;
 
     /**
      * @param args the command line arguments /**
      */
     public static void main(String[] args) throws InterruptedException {
 
-        Arrays.fill(array, 2);
+        Arrays.fill(array, 1);
 
         CalculationThread[] calcThreadArray = new CalculationThread[cores];
         Thread[] threads = new Thread[cores];
@@ -48,7 +48,7 @@ public class ThreadSampleCalc {
         int summ = 0;
         
         for (CalculationThread calcThreadArray1 : calcThreadArray) {
-            summ += calcThreadArray1/*[0]*/.getResult();
+            summ += calcThreadArray1.getResult();
         }
 
         System.out.println(summ);

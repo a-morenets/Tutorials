@@ -5,5 +5,5 @@ package misc.java8.method_references;
  */
 @FunctionalInterface
 interface Expression {
-    boolean isEqual(int n);
+    boolean test(int n);
 }

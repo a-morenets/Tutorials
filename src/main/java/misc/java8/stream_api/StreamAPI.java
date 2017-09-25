@@ -63,9 +63,9 @@ public class StreamAPI {
         System.out.println(countOld(numbers)); // 5
 
         /* filter() */
-        // count even numbers with streamAPI
+        // count numbers > 0 with streamAPI
         System.out.println(count(numbers));    // 5
-        // count even numbers
+        // count odd numbers
         IntPredicate condition = x -> x % 2 != 0;
         System.out.println(count(numbers, condition)); // 6
         // display each odd number multiplied by 10

@@ -1,6 +1,5 @@
 package specialSamples.equals_hashCode.equals_hashCode_01;
 
-
 /**
  * Created by User on 23.03.2016.
  */

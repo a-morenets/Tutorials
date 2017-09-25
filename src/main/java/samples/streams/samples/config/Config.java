@@ -7,14 +7,12 @@ package samples.streams.samples.config;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
  * @author Денис
  */
 public class Config {
@@ -27,39 +25,34 @@ public class Config {
         load();
     }
 
-    public String getFileName() {
-        return fileName;
-    }
-    
-    public static Config getInstance(){
-        if(instance == null){
+    public static Config getInstance() {
+        if (instance == null) {
             instance = new Config();
         }
         return instance;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
     private void load() {
         Properties props = new Properties();
-//        try( InputStream in= new BufferedInputStream( 
-//                new FileInputStream(CONFIG_FILE) ) ){
+//        try (InputStream in = new BufferedInputStream(new FileInputStream(CONFIG_FILE))) {
 //            props.load(in);
 //            fileName = props.getProperty(FILE_NAME);
 //        } catch (Exception ex) {
 //            Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        try( InputStream in = new BufferedInputStream
-                                (getClass().getResourceAsStream("/config.properties"))){
+        try (InputStream in = new BufferedInputStream(
+                getClass().getResourceAsStream("/config.properties"))) {
+
             props.load(in);
             fileName = props.getProperty(FILE_NAME);
-            
+
         } catch (Exception ex) {
             Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RuntimeException( ex );
+            throw new RuntimeException(ex);
         }
-                
-        
-        
     }
-    
-    
 }

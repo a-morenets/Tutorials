@@ -4,6 +4,7 @@ package specialSamples.nested_inner_local_anonymous.model;
  * Created by Администратор on 01.02.2016.
  */
 public class ElectroCar extends Car {
+
     public class ElectricEngine extends Engine {
         public ElectricEngine(int hp) {
             super(hp, FuelType.ELECTRO);

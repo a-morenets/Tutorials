@@ -10,7 +10,7 @@ public class LocalMain {
     public static void main(String[] args) {
         int values[] = {3, 4, 1};
 
-        class Wrapper{
+        class Wrapper {
             int val;
 
             public Wrapper() {
@@ -22,7 +22,7 @@ public class LocalMain {
 
             @Override
             public boolean equals(Object obj) {
-                return val == ((Wrapper)obj).val;
+                return val == ((Wrapper) obj).val;
             }
 
             @Override
@@ -46,7 +46,7 @@ public class LocalMain {
             System.out.println("not contains");
         }
 
-        Object obj = new Object(){
+        Object obj = new Object() {
             @Override
             public int hashCode() {
                 return test[0];
@@ -54,17 +54,18 @@ public class LocalMain {
 
             @Override
             public boolean equals(Object obj) {
-                return ((Wrapper)obj).val == test[0];
+                return ((Wrapper) obj).val == test[0];
             }
         };
-        if (list.contains(obj)){
+
+        if (list.contains(obj)) {
             System.out.println("contains");
         } else {
             System.out.println("not contains");
         }
 
         test[0] = 100500;
-        if (list.contains(obj)){
+        if (list.contains(obj)) {
             System.out.println("contains");
         } else {
             System.out.println("not contains");

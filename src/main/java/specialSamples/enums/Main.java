@@ -3,7 +3,6 @@ package specialSamples.enums;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
         Pixel pixel1 = new Pixel(2,2, Color.RED);
         System.out.println(pixel1.getColor());
         System.out.println("==============================");
@@ -25,4 +24,5 @@ public class Main {
             System.out.println(planet.name() + " " + planet.mass());
         }
     }
+
 }

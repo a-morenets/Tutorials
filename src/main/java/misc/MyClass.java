@@ -2,7 +2,6 @@ package misc;
 
 import java.util.Random;
 
-import block01.Lect02;
 
 public class MyClass {
 
@@ -68,9 +67,6 @@ public class MyClass {
 		System.out.println("false | true");
 		if (f1(false) | f2(true));
 
-		// invoke main() from other class
-		Lect02.main(null);
-		
 		System.out.println("------------------");
 		String s = "abc";
 		System.out.println(s);

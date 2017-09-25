@@ -54,4 +54,5 @@ public class ClassHash {
         result = 31 * result + Arrays.hashCode(arrayValue);
         return result;
     }
+
 }

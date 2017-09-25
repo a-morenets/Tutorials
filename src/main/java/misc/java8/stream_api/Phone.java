@@ -4,7 +4,6 @@ package misc.java8.stream_api;
  * Created by a-morenets on 25.11.2016.
  */
 class Phone {
-
     private String name;
     private String company;
     private int price;

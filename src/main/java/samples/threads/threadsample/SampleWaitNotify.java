@@ -21,7 +21,6 @@ class Saver {
     public void setValue(int value) {
         this.value = value;
     }
-
 }
 
 class ThreadGenerator extends Thread {
@@ -64,7 +63,7 @@ class ThreadCalculator extends Thread {
         this.saver = saver;
     }
 
-    public void run() {//saver.firstDone=true;
+    public void run() {
         synchronized (saver) {
             saver.firstDone = true;
 
@@ -85,7 +84,6 @@ class ThreadCalculator extends Thread {
 public class SampleWaitNotify {
 
     public static void main(String args[]) throws InterruptedException {
-        // System.out.println("TAK");
         Saver s = new Saver();
         ThreadGenerator generator = new ThreadGenerator(s);
         ThreadCalculator calculator = new ThreadCalculator(s);

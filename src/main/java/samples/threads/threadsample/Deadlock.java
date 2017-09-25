@@ -13,28 +13,26 @@ public class Deadlock {
     public static void main(String[] args) {
         Object firstFork = new Object();
         Object secondFork  = new Object();
-        new Thread(){
-            public void run(){
-                while(true){
-                    synchronized( firstFork ){
-                        synchronized (secondFork ){
-                            System.out.println("first is eating");
-                        }
+
+        new Thread(() -> {
+            while(true){
+                synchronized( firstFork ){
+                    synchronized (secondFork ){
+                        System.out.println("first is eating");
                     }
                 }
             }
-        }.start();
-        new Thread(){
-            public void run(){
-                while(true){
-                    synchronized( secondFork ){
-                        synchronized (firstFork ){
-                            System.out.println("second is eating");
-                        }
+        }).start();
+
+        new Thread(() -> {
+            while(true){
+                synchronized( secondFork ){
+                    synchronized (firstFork ){
+                        System.out.println("second is eating");
                     }
                 }
             }
-        }.start();
+        }).start();
     }
     
 }

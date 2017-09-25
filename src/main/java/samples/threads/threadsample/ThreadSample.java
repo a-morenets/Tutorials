@@ -5,40 +5,34 @@
 package samples.threads.threadsample;
 
 /**
- *
  * @author sds
  */
-class MyThisThread extends Thread{
-    public void run(){
+class MyThisThread extends Thread {
+
+    public void run() {
         try {
-           synchronized(this){
-            System.out.print("Hello ");
-            
-        
-             this.wait();
-             //Thread.sleep(200);
-             //notifyAll();
-            
-            System.out.print("!");
-        }
-        } catch (InterruptedException ex) {                
+            synchronized (this) {
+                System.out.print("Hello ");
+                this.wait();
+                System.out.print("!");
+            }
+        } catch (InterruptedException ignored) {
         }
     }
+
 }
 
 public class ThreadSample {
 
-    
     public static void main(String[] args) throws InterruptedException {
         MyThisThread thread = new MyThisThread();
         thread.start();
-        Thread.sleep(100);
-        synchronized(thread){
+        Thread.sleep(1000);
+        synchronized (thread) {
             System.out.print("world");
-            
             thread.notify();
-            
             System.out.print("?");
         }
     }
+
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package samples.threads.threadsample;
+package samples.threads.threadsample.array_sum_kiril;
 
 /**
  * @author KIRIL
@@ -13,7 +13,7 @@ public class CalculationThread implements Runnable {
     private int[] array;
     private int start;
     private int end;
-    private /*static*/ int result;
+    private int result;
 
     public CalculationThread(int[] array, int start, int end) {
         this.array = array;
@@ -55,8 +55,6 @@ public class CalculationThread implements Runnable {
 
     @Override
     public void run() {
-        // int summ = 0;
-
         for (int i = start; i < end; i++) {
             result += array[i];
         }

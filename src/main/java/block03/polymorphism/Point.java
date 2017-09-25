@@ -1,4 +1,4 @@
-package block03;
+package block03.polymorphism;
 
 public class Point {
 	public double x, y;
