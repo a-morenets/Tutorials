@@ -10,8 +10,7 @@ public class ChildClass extends ParentClass {
         intValue = publicValue;
         intValue = protectedValue;
         intValue = defaultValue;
-//        intValue = privateValue;
+        //intValue = privateValue;
         intValue = getPrivateValue();
     }
-    
 }

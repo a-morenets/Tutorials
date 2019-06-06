@@ -1,4 +1,4 @@
-package samples.immutableObjects;
+package samples.immutableObjects.pointLine;
 
 /**
  * Created by Денис on 04.11.2016.

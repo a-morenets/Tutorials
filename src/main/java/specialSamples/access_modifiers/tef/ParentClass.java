@@ -41,7 +41,6 @@ public class ParentClass {
     public void setPrivateValue(int privateValue) {
         this.privateValue = privateValue;
     }
-    
 }
 
 class OtherClassInFile {
@@ -51,10 +50,9 @@ class OtherClassInFile {
         intValue = parentClass.publicValue;
         intValue = parentClass.protectedValue;
         intValue = parentClass.defaultValue;
-//        intValue = parentClass.privateValue;
+        //intValue = parentClass.privateValue;
         intValue = parentClass.getPrivateValue();
     }
-    
 }
 
 

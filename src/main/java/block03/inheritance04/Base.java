@@ -8,11 +8,13 @@ public class Base {
 	/**
 	 * Constructor
 	 */
-	public Base() {
+	protected Base() {
+		super(); // Object
 	}
 
 	/**
 	 * Constructor
+	 *
 	 * @param x
 	 * @param y
 	 */

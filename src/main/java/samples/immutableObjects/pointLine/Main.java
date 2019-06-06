@@ -1,4 +1,4 @@
-package samples.immutableObjects;
+package samples.immutableObjects.pointLine;
 
 public class Main {
 

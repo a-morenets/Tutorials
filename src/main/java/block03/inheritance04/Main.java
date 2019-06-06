@@ -38,6 +38,9 @@ public class Main {
 		System.out.println(base instanceof Base); // true
 		System.out.println(base instanceof SubClass); // true
 		System.out.println(base instanceof SubSubClass); // true
+		System.out.println(base instanceof SubSubClass); // true
+
+		System.out.println(null instanceof SubSubClass); // false
 		System.out.println("-------------------");
 		
 		// init block

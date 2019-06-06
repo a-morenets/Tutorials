@@ -1,9 +1,9 @@
-package samples.immutableObjects;
+package samples.immutableObjects.pointLine;
 
 /**
  * Created by Денис on 04.11.2016.
  */
-public  final class Line {
+public final class Line {
     private final Point start;
     private final Point end;
 

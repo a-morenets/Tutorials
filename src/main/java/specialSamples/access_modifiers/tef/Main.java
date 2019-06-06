@@ -10,8 +10,7 @@ public class Main {
         intValue = parentClass.publicValue;
         intValue = parentClass.protectedValue;
         intValue = parentClass.defaultValue;
-//        intValue = parentClass.privateValue;
+        //intValue = parentClass.privateValue;
         intValue = parentClass.getPrivateValue();
     }
-    
 }

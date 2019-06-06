@@ -6,6 +6,12 @@ package specialSamples.createChildClass;
 public class Circle extends Point{
     private double radius;
 
+/*
+    public Circle() {
+
+    }
+*/
+
     public Circle(double radius) {
         checkRadius(radius);
     }
