@@ -14,7 +14,11 @@ import java.util.logging.Logger;
  */
 public class Queue {
     private LinkedList<Integer> list = new LinkedList<>();
-    private int limit = 10;
+    private int limit;
+
+    public Queue(int limit) {
+        this.limit = limit;
+    }
 
     public synchronized void push(Integer val) {
         while (list.size() >= limit) {

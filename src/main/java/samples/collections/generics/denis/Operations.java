@@ -1,4 +1,4 @@
-package samples.collections.generics.epam;
+package samples.collections.generics.denis;
 
 /**
  * Created by Денис on 14.04.2016.

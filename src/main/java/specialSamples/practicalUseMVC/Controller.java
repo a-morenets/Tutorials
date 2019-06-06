@@ -39,7 +39,7 @@ public class Controller {
     // The Utility methods
     public int inputIntValueWithScanner(Scanner sc) {
         view.printMessage(view.INPUT_INT_DATA);
-        while( ! sc.hasNextInt()) {
+        while(!sc.hasNextInt()) {
             view.printMessage(view.WRONG_INPUT_INT_DATA + view.INPUT_INT_DATA);
             sc.next();
         }

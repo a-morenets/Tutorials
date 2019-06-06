@@ -1,4 +1,4 @@
-package samples.collections.generics.epam;
+package samples.collections.generics.denis;
 
 
 

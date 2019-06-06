@@ -11,7 +11,7 @@ package samples.threads.com.simple;
 public class Runner {
 
     public static void main(String[] args) throws InterruptedException {
-        Queue queue = new Queue();
+        Queue queue = new Queue(1);
         new Producer(queue).start();
         Thread.sleep(20);
         new Consumer(queue).start();

@@ -3,6 +3,7 @@ package block03.encapsulation;
 public class Main {
 
     public static void main(String[] args) {
+
         // Пример на наследование и инкапсуляцию
         First f = new Second();
         f.addFive(); // prints second

@@ -39,7 +39,9 @@ public class StreamAPI {
      * @return
      */
     private static long count(int[] arr) {
-        return Arrays.stream(arr).filter(x -> x > 0).count();
+        return Arrays.stream(arr)
+                .filter(x -> x > 0)
+                .count();
     }
 
     /**
@@ -50,7 +52,9 @@ public class StreamAPI {
      * @return
      */
     private static long count(int[] arr, IntPredicate condition) {
-        return Arrays.stream(arr).filter(condition).count();
+        return Arrays.stream(arr)
+                .filter(condition)
+                .count();
     }
 
     /**
@@ -69,7 +73,9 @@ public class StreamAPI {
         IntPredicate condition = x -> x % 2 != 0;
         System.out.println(count(numbers, condition)); // 6
         // display each odd number multiplied by 10
-        Arrays.stream(numbers).filter(x -> x % 2 != 0).forEach(x -> System.out.println(x *= 10));
+        Arrays.stream(numbers)
+                .filter(x -> x % 2 != 0)
+                .forEach(x -> System.out.println(x *= 10));
 
         /* allMatch() */
         System.out.println(Arrays.stream(numbers).allMatch(x -> x > -10 && x < 10)); // true

@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package samples.innerClasses.ua.epam.inner;
+package samples.innerClasses.ua.denis.inner;
 
 /**
  *
  * @author Денис
  */
-public class TestClass {
+public class TestFromInnerNested extends Ship.Boat {
+
+    public TestFromInnerNested(Ship ship, int capacity) {
+        super(ship, capacity);
+    }
     
 }

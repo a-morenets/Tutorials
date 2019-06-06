@@ -1,7 +1,5 @@
 package misc.java8.method_references;
 
-import java.util.function.Predicate;
-
 /**
  * Method references
  * http://metanit.com/java/tutorial/9.2.php
@@ -9,14 +7,14 @@ import java.util.function.Predicate;
  */
 public class MethodReferences {
 
-    /* This non-static method can be used as method reference in Predicate */
-    private boolean isEven(int n) {
-        return n % 2 == 0;
-    }
-
     /* This static method can be used as method reference in Predicate */
     private static boolean isPositive(int n) {
         return n > 0;
+    }
+
+    /* This non-static method can be used as method reference in Predicate */
+    private boolean isEven(int n) {
+        return n % 2 == 0;
     }
 
     /**
@@ -33,25 +31,6 @@ public class MethodReferences {
                 result += i;
         }
         return result;
-    }
-
-    /* This non-static method can be used in a static way as method reference in Predicate */
-    private boolean isOdd(int n) {
-        return n % 2 == 0;
-    }
-
-    private int sumOdd(int[] numbers, Expr func) {
-        int result = 0;
-        for (int i : numbers) {
-            if (func.test(null, i))
-                result += i;
-        }
-        return result;
-    }
-
-    void printOddSum(int[] nums) {
-        // non-static method reference in a static way (sum odd numbers only)
-        System.out.println(sumOdd(nums, MethodReferences::isOdd)); // 45
     }
 
     /**

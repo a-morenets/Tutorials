@@ -8,6 +8,7 @@ package samples.streams.samples.config;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,6 +47,9 @@ public class Config {
 //        }
         try (InputStream in = new BufferedInputStream(
                 getClass().getResourceAsStream("/config.properties"))) {
+
+            URL resource = getClass().getResource("/config.properties");
+            System.out.println("resource = " + resource);
 
             props.load(in);
             fileName = props.getProperty(FILE_NAME);
